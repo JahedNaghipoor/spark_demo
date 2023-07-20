@@ -4,7 +4,6 @@ SHELL ["/bin/bash", "-c"]
 
 # Clean setup
 RUN sudo apt-get update \
-    && sudo apt-get update \
     && sudo apt-get clean \
     && sudo rm -rf /var/cache/apt/* /var/lib/apt/lists/* /tmp/*
 
