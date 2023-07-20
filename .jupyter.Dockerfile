@@ -59,8 +59,8 @@ RUN if [ -z "${scala_version}" ]; then \
   ln -s "${SPARK_HOME}/sbin/spark-config.sh" /usr/local/bin/before-notebook.d/spark-config.sh
 
 # Configure IPython system-wide
-# COPY ipython_kernel_config.py "/etc/ipython/"
-# RUN fix-permissions "/etc/ipython/"
+COPY ipython_kernel_config.py "/etc/ipython/"
+RUN fix-permissions "/etc/ipython/"
 
 USER ${NB_UID}
 
@@ -76,6 +76,6 @@ USER ${NB_UID}
 WORKDIR "${HOME}"
 # Install python packages
 
-RUN pip3 install -r requirements.txt
+RUN pip3 install pandas pyspark -q
 
 EXPOSE 4040
