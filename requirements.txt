@@ -1,0 +1,6 @@
+numpy==1.25.1
+pandas==2.0.3
+py4j==0.10.9.7
+pyspark==3.4.1
+pytz==2023.3
+tzdata==2023.3
