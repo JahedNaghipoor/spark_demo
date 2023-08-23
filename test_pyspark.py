@@ -7,4 +7,4 @@ spark = SparkSession.builder.getOrCreate()
 
 df = spark.read.csv('Rep_vs_Dem_tweets.csv',inferSchema=True,header=True)
 
-df.show().toPandas()
+print(df.toPandas())
